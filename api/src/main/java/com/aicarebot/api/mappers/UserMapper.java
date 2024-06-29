@@ -1,4 +1,4 @@
-package com.aicarebot.api;
+package com.aicarebot.api.mappers;
 
 import java.util.List;
 
@@ -8,6 +8,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import com.aicarebot.api.daos.User;
 
 @Mapper
 public interface UserMapper {

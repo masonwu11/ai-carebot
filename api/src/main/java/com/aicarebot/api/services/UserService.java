@@ -1,9 +1,12 @@
-package com.aicarebot.api;
+package com.aicarebot.api.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+
+import com.aicarebot.api.daos.User;
+import com.aicarebot.api.mappers.UserMapper;
 
 @Service
 public class UserService {

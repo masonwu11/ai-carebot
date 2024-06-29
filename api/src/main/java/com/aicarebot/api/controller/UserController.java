@@ -1,4 +1,4 @@
-package com.aicarebot.api;
+package com.aicarebot.api.controller;
 
 import java.util.Optional;
 
@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.aicarebot.api.daos.User;
+import com.aicarebot.api.services.UserService;
 
 @RestController
 @RequestMapping("/api")

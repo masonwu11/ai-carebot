@@ -1,4 +1,4 @@
-package com.aicarebot.api;
+package com.aicarebot.api.daos;
 
 import lombok.Data;
 
