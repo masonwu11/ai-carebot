@@ -7,6 +7,6 @@ public class Record {
     private String condition;
     private String date;
     private String time;
-    private String severity;
+    private int severity;
 
 }

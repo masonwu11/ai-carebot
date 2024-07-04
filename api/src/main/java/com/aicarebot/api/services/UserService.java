@@ -25,6 +25,10 @@ public class UserService {
         return Optional.ofNullable(userMapper.findById(id));
     }
 
+    public Optional<User> getUserByEmail(String email) {
+        return Optional.ofNullable(userMapper.findByEmail(email));
+    }
+
     public User addUser(User user) {
         userMapper.insert(user);
         return user;
@@ -38,6 +42,6 @@ public class UserService {
 
     public void deleteUser(Long id) {
         userMapper.delete(id);
-      }
+    }
     
 }

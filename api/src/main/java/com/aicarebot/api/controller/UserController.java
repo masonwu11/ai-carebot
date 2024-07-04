@@ -53,6 +53,23 @@ public class UserController {
         }
     }
 
+    @GetMapping("/users/email/{email}")
+    public ResponseEntity<?> getUserByEmail(@PathVariable String email) {
+        logger.info("*****************************");
+        logger.info("Received request to get user with email: {}", email);
+        logger.info("*****************************");
+
+        Optional<User> optionUser = userService.getUserByEmail(email);
+
+        if (optionUser.isPresent()) {
+            logger.info("User found: {}", optionUser.get());
+            return ResponseEntity.ok(optionUser.get());
+        } else {
+            logger.warn("User with email: {} not found", email);
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @PostMapping("/users")
     public ResponseEntity<?> createUser(@RequestBody User user) {
         logger.info("*****************************");

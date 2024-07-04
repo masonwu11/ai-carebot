@@ -12,7 +12,6 @@ public class User {
     private String password;
     private Integer age;
     private String gender; 
-    private Record record;
     private ArrayList<Request> requests;
     private ArrayList<Record> records;
 }
