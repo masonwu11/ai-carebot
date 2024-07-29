@@ -1,5 +1,6 @@
 package com.aicarebot.api.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -28,7 +29,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/users")
-    public ResponseEntity<?> getAllUsers() {
+    public ResponseEntity<List<User>> getAllUsers() {
         logger.info("*****************************");
         logger.info("Received request to get all users");
         logger.info("*****************************");
@@ -37,7 +38,7 @@ public class UserController {
     }
     
     @GetMapping("/users/{id}")
-    public ResponseEntity<?> getUserById(@PathVariable Long id) {
+    public ResponseEntity<User> getUserById(@PathVariable Long id) {
         logger.info("*****************************");
         logger.info("Received request to get user with ID: {}", id);
         logger.info("*****************************");
@@ -54,7 +55,7 @@ public class UserController {
     }
 
     @GetMapping("/users/email/{email}")
-    public ResponseEntity<?> getUserByEmail(@PathVariable String email) {
+    public ResponseEntity<User> getUserByEmail(@PathVariable String email) {
         logger.info("*****************************");
         logger.info("Received request to get user with email: {}", email);
         logger.info("*****************************");
@@ -71,7 +72,7 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<?> createUser(@RequestBody User user) {
+    public ResponseEntity<User> createUser(@RequestBody User user) {
         logger.info("*****************************");
         logger.info("Received request to create user: {}", user);
         logger.info("*****************************");
@@ -82,7 +83,7 @@ public class UserController {
     }
 
     @PutMapping("/users/{id}")
-    public ResponseEntity<?> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
         logger.info("*****************************");
         logger.info("Received request to update user with ID: {}", id);
         logger.info("*****************************");
@@ -98,7 +99,7 @@ public class UserController {
     }
 
     @DeleteMapping("/users/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         logger.info("*****************************");
         logger.info("Received request to delete user with ID: {}", id);
         logger.info("*****************************");
