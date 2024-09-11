@@ -77,9 +77,18 @@ public class UserController {
         logger.info("Received request to create user: {}", user);
         logger.info("*****************************");
 
-        User createdUser = userService.addUser(user);
-        logger.info("User created: {}", createdUser);
-        return ResponseEntity.ok(createdUser);
+        // check if email exists
+        Optional<User> optionUser = userService.getUserByEmail(user.getEmail());
+        if (optionUser.isPresent()) {
+            logger.info("Updated user {} info", user.getId());
+            User createdUser = userService.updateUser(optionUser.get().getId(), user).get();
+            return ResponseEntity.ok(createdUser);
+        }
+        else {
+            logger.info("User not found, creating new user");
+            User createdUser = userService.addUser(user);
+            return ResponseEntity.ok(createdUser);
+        }
     }
 
     @PutMapping("/users/{id}")
