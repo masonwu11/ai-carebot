@@ -1,4 +1,4 @@
-package com.aicarebot.api.controller;
+package com.aicarebot.api.controllers;
 
 import java.util.List;
 import java.util.Optional;
